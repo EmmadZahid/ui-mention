@@ -2,6 +2,9 @@ body {
   font-size: 14px;
   font-family: 'Helvetica'; }
 
+* {
+  box-sizing: border-box; }
+
 textarea[ui-mention], textarea[ui-mention] + * {
   line-height: 1em;
   font-size: 1rem;
@@ -11,6 +14,7 @@ textarea[ui-mention], textarea[ui-mention] + * {
   font-weight: normal; }
 
 textarea[ui-mention] {
+  max-height: 100px;
   min-height: 100px;
   width: 100%;
   display: block;
@@ -29,6 +33,9 @@ a {
 
 .mention-container {
   position: relative; }
+  .mention-container .mention-sub-container {
+    position: relative;
+    overflow: hidden; }
 
 .mention-highlight {
   position: absolute;
@@ -52,8 +59,10 @@ a {
   position: absolute;
   top: 100%;
   min-width: 150px;
-  right: 0;
-  background: lightblue;
+  max-height: 50px;
+  overflow: auto;
+  left: 0;
+  background: red;
   list-style: none;
   padding: 0;
   margin: 0; }

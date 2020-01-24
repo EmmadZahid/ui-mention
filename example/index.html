@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>AngularUI | ui-mention Example</title>
@@ -9,6 +10,7 @@
   <script src="../dist/mention.js"></script>
   <script src="example.js"></script>
 </head>
+
 <body ng-app="example">
 
   <h1>UI Mention</h1>
@@ -18,13 +20,11 @@
   </p>
 
   <div class="mention-container">
-    <textarea ui-mention mention-example
-      ng-model="post.message"
-      placeholder="Use @mention to trigger"
-      ng-trim="false"
-      ></textarea>
-    <div class="mention-highlight"></div>
-
+    <div class="mention-sub-container">
+      <textarea ui-mention mention-example ng-model="post.message" placeholder="Use @mention to trigger"
+        ng-trim="false"></textarea>
+      <div class="mention-highlight"></div>
+    </div>
     <ul ng-if="$mention.choices.length" class="dropdown">
       <li ng-repeat="choice in $mention.choices" ng-class="{active:$mention.activeChoice==choice}">
         <a ng-click="$mention.select(choice)">
@@ -45,4 +45,5 @@
   </p>
 
 </body>
+
 </html>

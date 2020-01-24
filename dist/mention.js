@@ -14,6 +14,10 @@ angular.module('ui.mention', []).directive('uiMention', function () {
       var uiMention = _ref2[1];
 
       uiMention.init(ngModel);
+      $element[0].addEventListener("scroll", function (evt) {
+        console.log(evt);
+        $element.next()[0].style.top = "-" + evt.srcElement.scrollTop + "px";
+      });
     }
   };
 });
